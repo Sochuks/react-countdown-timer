@@ -14,8 +14,18 @@ const Countdown = () => {
 
     // Create state
     useEffect(()=>{
-        
-    })
+        setInterval(()=>{
+
+        }, 1000);
+
+        return clearInterval()
+    }, []);
+
+    // Update remaining time
+    const updateTime_left = () => {
+
+    };
+
   return (
     <div className='flex justify-center items-center mx-auto w-screen h-screen p-8'>
         {/* App Container */}
