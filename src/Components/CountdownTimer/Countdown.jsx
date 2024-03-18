@@ -3,6 +3,19 @@ import {useState, useEffect} from 'react'
 const Countdown = () => {
     // create state
     const [time_left, setTime_left] = useState(default_time)
+
+    //Objects for Default Tme
+    const default_time = {
+        days: "--",
+        hours: "--",
+        minutes: "--",
+        seconds: "--"
+    }
+
+    // Create state
+    useEffect(()=>{
+        
+    })
   return (
     <div className='flex justify-center items-center mx-auto w-screen h-screen p-8'>
         {/* App Container */}
