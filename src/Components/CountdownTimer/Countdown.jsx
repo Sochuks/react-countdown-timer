@@ -29,6 +29,15 @@ const Countdown = () => {
             // Remaining Seconds
             const seconds = Math.floor(difference % (24 * 60 * 60 * 1000) / 1000); 
 
+            // Stop Timer using clearInterval
+            if (difference < 0){
+                clearInterval(interval.current);
+            }else{
+                setTimerDays(days);
+                setTimerHours(hours);
+                setTimerMinutes(minutes);
+                setTimerSeconds(seconds);
+            }
 
         });
     };
@@ -38,13 +47,13 @@ const Countdown = () => {
         {/* App Container */}
         <div className="flex justify-around p-8 bg-lime-200 gap-4">
             {/* DAYS */}
-            <span>{}</span>
+            <span>{timerDays}</span>
             {/* HOURS */}
-            <span>{}</span>
+            <span>{timerHours}</span>
             {/* MINUTES */}
-            <span>{}</span>
+            <span>{timerMinutes}</span>
             {/* SECONDS */}
-            <span>{}</span>
+            <span>{timerSeconds}</span>
         </div>
         
         
@@ -53,10 +62,10 @@ const Countdown = () => {
 };
 
 Countdown.defaultProps = {
-    timerDays: 00,
-    timerHours: 00,
-    timerMinutes: 00,
-    timerSeconds: 00,
+    timerDays: 10,
+    timerHours: 10,
+    timerMinutes: 10,
+    timerSeconds: 10,
 };
 
 export default Countdown
