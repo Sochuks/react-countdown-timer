@@ -1,6 +1,11 @@
 import {useState} from 'react'
 
 const Countdown = () => {
+    // Create state for components of timer
+    const [timerDays, setTimerDays] = useState();
+    const [timerHours, setTimerHours] = useState();
+    const [timerMinutes, setTimerMinutes] = useState();
+    const [timerSeconds, setTimerSeconds] = useState();
 
   return (
     <div className='flex justify-center items-center mx-auto w-screen h-screen p-8'>
