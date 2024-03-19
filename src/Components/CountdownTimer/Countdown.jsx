@@ -12,6 +12,16 @@ const Countdown = () => {
     // Get Time!
     const startTime = ()=>{
         const countDownDate = new Date("").getTime();
+
+        interval = setInterval(()=>{
+            // Current Time
+            const now = new Date().getTime();
+            
+            // Difference from countdown date to Now
+            const difference = countDownDate - now
+
+            
+        });
     };
 
   return (
