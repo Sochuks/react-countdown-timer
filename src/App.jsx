@@ -44,6 +44,10 @@ const startTime = ()=>{
     });
 };
 
+useEffect(()=>{
+  startTime();
+});
+
 
   return (
     <>
