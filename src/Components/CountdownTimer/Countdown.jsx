@@ -18,9 +18,18 @@ const Countdown = () => {
             const now = new Date().getTime();
             
             // Difference from countdown date to Now
-            const difference = countDownDate - now
-
+            const difference = countDownDate - now;
             
+            // Remaining Days
+            const days = Math.floor(difference / (24 * 60 * 60 * 1000));
+            // Remaining Hours
+            const hours = Math.floor(difference % (24 * 60 * 60 * 1000) / (60 * 60 * 1000));
+            // Remaining Minutes
+            const minutes = Math.floor(difference % (24 * 60 * 60 * 1000) / (60 * 1000));
+            // Remaining Seconds
+            const seconds = Math.floor(difference % (24 * 60 * 60 * 1000) / 1000); 
+
+
         });
     };
 
