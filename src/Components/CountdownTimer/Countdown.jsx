@@ -7,6 +7,13 @@ const Countdown = () => {
     const [timerMinutes, setTimerMinutes] = useState();
     const [timerSeconds, setTimerSeconds] = useState();
 
+    let interval;
+
+    // Get Time!
+    const startTime = ()=>{
+        const countDownDate = new Date("").getTime();
+    };
+
   return (
     <div className='flex justify-center items-center mx-auto w-screen h-screen p-8'>
         {/* App Container */}
