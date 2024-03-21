@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 
 import Countdown from './Components/CountdownTimer/Countdown'
 
@@ -9,11 +9,15 @@ const [timerHours, setTimerHours] = useState();
 const [timerMinutes, setTimerMinutes] = useState();
 const [timerSeconds, setTimerSeconds] = useState();
 
+// UseREf
+let interval = useRef();
+
 // Get Time!
 const startTime = ()=>{
-    const countDownDate = new Date("2024-03-22").getTime();
+  // Get Countdown date
+    const countDownDate = new Date("April 20, 2024 14:00:00").getTime();
 
-    const interval = setInterval(()=>{
+    interval = setInterval(()=>{
         // Current Time
         const now = new Date().getTime();
         
@@ -45,7 +49,9 @@ const startTime = ()=>{
 useEffect(()=>{
   startTime();
 
-  return ()=> clearInterval(interval)
+  return ()=> {
+    clearInterval(interval)
+  };
 }, []);
 
 
