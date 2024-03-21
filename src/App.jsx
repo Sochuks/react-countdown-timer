@@ -15,7 +15,7 @@ let interval = useRef();
 // Get Time!
 const startTime = ()=>{
   // Get Countdown date
-    const countDownDate = new Date("April 20, 2024 14:00:00").getTime();
+    const countDownDate = new Date("March 22, 2024 15:30:00").getTime();
 
     interval = setInterval(()=>{
         // Current Time
