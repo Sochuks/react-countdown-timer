@@ -9,13 +9,11 @@ const [timerHours, setTimerHours] = useState();
 const [timerMinutes, setTimerMinutes] = useState();
 const [timerSeconds, setTimerSeconds] = useState();
 
-let interval;
-
 // Get Time!
 const startTime = ()=>{
-    const countDownDate = new Date("").getTime();
+    const countDownDate = new Date("2024-03-22").getTime();
 
-    interval = setInterval(()=>{
+    const interval = setInterval(()=>{
         // Current Time
         const now = new Date().getTime();
         
@@ -23,17 +21,17 @@ const startTime = ()=>{
         const difference = countDownDate - now;
         
         // Remaining Days
-        const days = Math.floor(difference / (24 * 60 * 60 * 1000));
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
         // Remaining Hours
-        const hours = Math.floor(difference % (24 * 60 * 60 * 1000) / (60 * 60 * 1000));
+        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
         // Remaining Minutes
-        const minutes = Math.floor(difference % (24 * 60 * 60 * 1000) / (60 * 1000));
+        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
         // Remaining Seconds
-        const seconds = Math.floor(difference % (24 * 60 * 60 * 1000) / 1000); 
+        const seconds = Math.floor((difference % (1000 * 60)) / 1000); 
 
         // Stop Timer using clearInterval
         if (difference < 0){
-            clearInterval(interval.current);
+            clearInterval(interval);
         }else{
             setTimerDays(days);
             setTimerHours(hours);
@@ -41,12 +39,14 @@ const startTime = ()=>{
             setTimerSeconds(seconds);
         }
 
-    });
+    }, 1000);
 };
 
 useEffect(()=>{
   startTime();
-});
+
+  return ()=> clearInterval(interval)
+}, []);
 
 
   return (

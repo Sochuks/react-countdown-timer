@@ -7,13 +7,28 @@ const Countdown = ({timerDays, timerHours, timerMinutes, timerSeconds}) => {
         {/* App Container */}
         <div className="flex justify-around p-8 bg-lime-200 gap-4">
             {/* DAYS */}
-            <span>{timerDays}</span>
+            <div>
+                {timerDays}
+                <span>DAYS</span>
+            </div>
+            
             {/* HOURS */}
-            <span>{timerHours}</span>
+            <div>
+                {timerHours}
+                <span>HOURS</span>
+            </div>
+
             {/* MINUTES */}
-            <span>{timerMinutes}</span>
+            <div>
+                {timerMinutes}
+                <span>MINUTES</span>
+            </div>
+
             {/* SECONDS */}
-            <span>{timerSeconds}</span>
+            <div>
+                {timerSeconds}
+                <span>SECONDS</span>
+            </div>
         </div>
         
         
@@ -22,7 +37,7 @@ const Countdown = ({timerDays, timerHours, timerMinutes, timerSeconds}) => {
 };
 
 Countdown.defaultProps = {
-    timerDays: '--',
+    timerDays: "--",
     timerHours: "--",
     timerMinutes: "--",
     timerSeconds: "--",
